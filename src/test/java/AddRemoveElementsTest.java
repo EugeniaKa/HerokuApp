@@ -1,17 +1,16 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 public class AddRemoveElementsTest {
 
@@ -31,7 +30,7 @@ public class AddRemoveElementsTest {
     }
 
     @Test
-    public void addRemoveElementsTest () {
+    public void addRemoveElementsTest() {
         // запустить сайт
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         // найти кнопку Add
@@ -40,17 +39,18 @@ public class AddRemoveElementsTest {
         add.click();
         add.click();
         // получаем коллекцию кнопок Delete
-        List<WebElement> deleteButton = driver.findElements(By.xpath (".//button[text()='Delete']"));
+        List<WebElement> deleteButton = driver.findElements(By.xpath(".//button[text()='Delete']"));
         assertEquals(deleteButton.size(), 2);
         // кликаем для удаления на вторую кнопку
         deleteButton.get(1).click();
-        assertEquals(driver.findElements(By.xpath (".//button[text()='Delete']")).size(), 1);
+        assertEquals(driver.findElements(By.xpath(".//button[text()='Delete']")).size(), 1);
 
     }
 
 
     @AfterTest
-    public void tearDown () {
+    public void tearDown() {
+
         driver.quit();
     }
 }

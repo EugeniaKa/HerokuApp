@@ -6,7 +6,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 public class DropdownTest {
@@ -26,11 +28,17 @@ public class DropdownTest {
 
     @Test
     public void dropdownTest() {
+        // заходим на сайт
         driver.get("http://the-internet.herokuapp.com/dropdown");
-        Select select = new Select (driver.findElement(By.id("dropdown")));
+        // находим элемент - строку с dropdpwn
+        Select select = new Select(driver.findElement(By.id("dropdown")));
+        // выбираем Option 1
         select.selectByVisibleText("Option 1");
+        // сравниваем полученное значение с ожидаемым
         assertEquals(select.getFirstSelectedOption().getText(), "Option 1");
+        // выбираем Option 2
         select.selectByVisibleText("Option 2");
+        // сравниваем полученное значение с ожидаемым
         assertEquals(select.getFirstSelectedOption().getText(), "Option 2");
     }
 

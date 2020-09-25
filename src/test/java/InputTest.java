@@ -29,14 +29,23 @@ public class InputTest {
 
     @Test
     public void inputTest() {
+        // открываем сайт
         driver.get("http://the-internet.herokuapp.com/inputs");
+        // находим строку для введения значений
         WebElement input = driver.findElement(By.tagName("input"));
+        // записываем в нее "2"
         input.sendKeys("2");
+        // нажимаем стрелку вверх
         input.sendKeys(Keys.ARROW_UP);
+        // сравниваем полученное значение с ожидаемой тройкой
         assertEquals(input.getAttribute("value"), "3");
+        // нажимаем стрелку вниз
         input.sendKeys(Keys.ARROW_DOWN);
+        // сравниваем полученное значение с ожидаемой двойкой
         assertEquals(input.getAttribute("value"), "2");
+        // передаем букву в строку
         input.sendKeys("a");
+        // сравниваем полученное значение с ожидаемой двойкой
         assertEquals(input.getAttribute("value"), "2");
     }
 

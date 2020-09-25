@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +10,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
@@ -32,14 +30,22 @@ public class CheckBoxTest {
 
     @Test
     public void checkBoxTest() {
+        // заходим на сайт
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        List<WebElement> checkboxes = driver.findElements(By.tagName ("input"));
-        assertFalse (checkboxes.get(0).isSelected(), "Первый чекбокс не должен быть выбран");
+        // находим коллекцию полей checkbox
+        List<WebElement> checkboxes = driver.findElements(By.tagName("input"));
+        // проверяем, что первый чекбокс не выбран
+        assertFalse(checkboxes.get(0).isSelected(), "Первый чекбокс не должен быть выбран");
+        // кликаем по первому чекбоксу, выбирая его
         checkboxes.get(0).click();
-        assertTrue (checkboxes.get(0).isSelected());
-        assertTrue (checkboxes.get(1).isSelected());
+        // проверяем, что первый чекбокс выбран
+        assertTrue(checkboxes.get(0).isSelected());
+        // проверяем, что второй чекбокс выбран
+        assertTrue(checkboxes.get(1).isSelected());
+        // кликаем по второму чекбоксу
         checkboxes.get(1).click();
-        assertFalse (checkboxes.get(1).isSelected());
+        // проверяем, что второй чекбокс не выбран
+        assertFalse(checkboxes.get(1).isSelected());
     }
 
     @AfterMethod
