@@ -1,0 +1,134 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Цвет фона</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        body {
+            background: cadetblue;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+<h1>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+    IT
+
+    <img src="programmer.png" alt="Programmer" width="120" height="100" style="vertical-align:middle">
+
+    Courses
+</h1>
+
+<table style="width:100%">
+    <tr>
+
+        <th><i> Name of the course </i></th>
+        <th><i> Teachers name </i></th>
+        <th><i> Duration </i></th>
+
+    </tr>
+
+    <tr>
+        <style>
+            td {
+                text-align: center;
+            }
+        </style>
+        <td>Java</td>
+        <td>Roman</td>
+        <td>6 months</td>
+    </tr>
+    <tr>
+        <td>AQA</td>
+        <td>Dima</td>
+        <td>4 months</td>
+    </tr>
+    <tr>
+        <td>Python</td>
+        <td>Misha</td>
+        <td>5 months</td>
+    </tr>
+</table>
+
+<h2>
+    <style>
+        h2 {
+            text-align: center;
+        }
+    </style>
+
+    To submit for a course, please, fill in the form below:
+</h2>
+
+<form>
+
+    <label for="FN"> <b> First name: </b> </label>
+    <input type="text" id="FN" name="FN">
+    <label for="LN"> <b> Last name: </b> </label>
+    <input type="text" id="LN" name="LN">
+
+    <p>
+
+    <h3> Sex: </h3>
+    <input type="checkbox" id="sex1">
+    <label for="sex1"> Male </label><br>
+    <input type="checkbox" id="sex2">
+    <label for="sex2"> Female </label><br>
+
+    </p>
+
+    <p>
+
+    <h3>
+        Your mobile number for contact:
+    </h3>
+
+    <input type="number" id="phoneNum" name="phoneNum">
+
+    </p>
+
+    <p>
+
+    <h3>
+        Choose a course you want to submit for:
+    </h3>
+
+    <select name="courses" id="courses">
+        <option value="java">Java</option>
+        <option value="AQA">AQA</option>
+        <option value="Python">Python</option>
+    </select>
+    </p>
+</form>
+
+<button type="button">Submit
+
+    <style>
+        button {
+            color: darkred;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</button>
+
+<button type="button">
+    <a href="https://teachmeskills.by/">Read more</a>
+
+</button>
+</body>
+</html>
